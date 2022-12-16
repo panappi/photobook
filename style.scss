@@ -1,8 +1,10 @@
 @charset "UTF-8";
 // 共通設定 //
 $back-color: #f4f9ff;
+$back-color_menu: #222222;
 $back-color_index: #fff;
 $font-color: #333333;
+$font-color_menu: #eeeeee;
 $border-color_detail: #dedede;
 @mixin display-flex_column($gap) {
   display: flex;
@@ -10,26 +12,27 @@ $border-color_detail: #dedede;
   gap: $gap;
 }
 
-// ブレイクポイント
+// ブレイクポイント //
 $sp: 1025px;
 
 // media
-@mixin pc {
-  @media (min-width: $sp) {
-    @content;
-  }
-}
-@mixin widthVW($width) {
-  width: ($width / 375) * 100vw;
-}
+// @mixin pc {
+//   @media (min-width: $sp) {
+//     @content;
+//   }
+// }
+// @mixin widthVW($width) {
+//   width: ($width / 375) * 100vw;
+// }
 
-.hoge {
-  height: 1000px;
-  background-color: red;
-  @include widthVW(37);
-}
+// .hoge {
+//   height: 1000px;
+//   background-color: red;
+//   @include widthVW(37);
+// }
 
 body {
+  position: relative;
   background-color: $back-color;
   color: $font-color;
   font-family: "Meiryo";
@@ -50,10 +53,33 @@ body {
   // フッターの上の余白をgapでつける場合
   // @include display-flex_column(115px);
   padding: 0 10% 15px;
+  footer {
+    margin-top: 115px;
+  }
 }
 .wrap_inner {
   max-width: 600px;
   margin: 0 auto;
+}
+
+// メニュー //
+#menu {
+  position: absolute;
+  position: fixed;
+  left: 50%;
+  background-color: $back-color_menu;
+  opacity: 0.7;
+  height: 100vh;
+  width: 50%;
+  ul {
+    @include display-flex_column(20px);
+    margin-top: 30px;
+    align-items: center;
+    li {
+      color: $font-color_menu;
+      border-bottom: 1px solid $font-color_menu;
+    }
+  }
 }
 
 // ロゴ //
@@ -73,7 +99,7 @@ body {
 }
 
 // 目次 //
-.index {
+#index {
   max-width: 1000px;
   margin: 60px auto;
   padding: 30px 10% 20px;
@@ -89,7 +115,7 @@ body {
 }
 
 // コンテンツ //
-.detail {
+#detail {
   .wrap_inner {
     @include display-flex_column(10px);
   }
@@ -104,7 +130,7 @@ body {
 .detail_inner {
   @include display-flex_column(25px);
 }
-@media (min-width: 1025px) {
+@media (min-width: $sp) {
   .detail_inner {
     flex-direction: row;
     gap: 60px;
@@ -146,9 +172,6 @@ body {
 // }
 
 // フッター //
-.footter {
-  margin-top: 115px;
-}
 .copyright {
   font-size: 10px;
 }

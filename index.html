@@ -12,6 +12,15 @@
     <link rel="icon" href="img/favicon.ico" />
   </head>
   <body>
+    <!-- メニュー -->
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="#index">INDEX</a></li>
+        <li><a href="#detail">DETAIL</a></li>
+        <li><a href="index.html" target="_blank">ONLINE SHOP</a></li>
+      </ul>
+    </nav>
     <!-- ロゴ -->
     <div class="logo-mainvisual_wrapper">
       <h1 class="logo">
@@ -26,7 +35,7 @@
     </div>
 
     <!-- 目次 -->
-    <section class="index">
+    <section id="index">
       <div class="wrap_inner">
         <h2 class="section-title_font">INDEX</h2>
         <ol class="section-text_font">
@@ -51,7 +60,7 @@
 
     <!-- コンテンツ -->
     <div class="detail-footer_wrapper">
-      <section class="detail">
+      <section id="detail">
         <div class="wrap_inner">
           <h2 class="section-title_font">DETAIL</h2>
           <div class="detail_inner">
@@ -90,7 +99,7 @@
                 テキストテキストテキストテキストテキストテ キスト
                 テキストテキストテキストテキストテ キストテキスト
               </p>
-              <a class="section-text_font" href="index.html">
+              <a class="section-text_font" href="index.html" target="_blank">
                 <!-- FIXME: target="_blank" -->
                 オンラインストアで見る
               </a>
@@ -100,9 +109,12 @@
       </section>
       <!-- フッター -->
       <!-- FIXME: footerタグ -->
-      <div class="footter wrap_inner">
+      <footer class="wrap_inner">
         <small class="copyright">&copy;2020 PHOTO BOOK</small>
-      </div>
+      </footer>
     </div>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
   </body>
 </html>
