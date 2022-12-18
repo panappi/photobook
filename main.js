@@ -14,18 +14,19 @@ const menu_image_change = (el) => {
 const menu_text_change = (el) => {
   if (el.classList.contains("menu_text")) {
     el.classList.remove("menu_text", "fadeIn");
+    el.style.display = "none";
   } else {
-    el.style.right = "-100%";
     el.classList.add("menu_text", "fadeIn");
+    el.style.display = "";
   }
 };
 
 button.addEventListener(
   "click",
   () => {
+    menu_text_change(menu_text);
     menu_image_change(menu_imageOPEN);
     menu_image_change(menu_imageCLOSE);
-    menu_text_change(menu_text);
   },
   false
 );

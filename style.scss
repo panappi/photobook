@@ -65,7 +65,7 @@ body {
 // アニメーション //
 .fadeIn {
   animation-name: fadeInAnime; /*アニメーションの定義名*/
-  animation-duration: 2s; /*アニメーション変化時間 ※デフォルト*/
+  animation-duration: 1s; /*アニメーション変化時間 ※デフォルト*/
   animation-fill-mode: forwards; /*アニメーションの開始と終了時の状態を指定*/
   opacity: 0;
 }
@@ -78,7 +78,7 @@ body {
   }
   to {
     opacity: 0.8;
-    left: 50%;
+    right: 0;
     // transform: translateY(0);
   }
 }
