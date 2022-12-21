@@ -62,6 +62,33 @@ body {
     right: 0;
   }
 }
+.fadeOut {
+  -webkit-animation-name: fadeOutAnime;
+          animation-name: fadeOutAnime; /*アニメーションの定義名*/
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s; /*アニメーション変化時間 ※デフォルト*/
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; /*アニメーションの開始と終了時の状態を指定*/
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeOutAnime {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutAnime {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .menu_text {
   background-color: #222222;
   height: 100vh;

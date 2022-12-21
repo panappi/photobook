@@ -69,7 +69,6 @@ body {
   animation-fill-mode: forwards; /*アニメーションの開始と終了時の状態を指定*/
   opacity: 0;
 }
-
 @keyframes fadeInAnime {
   from {
     opacity: 0;
@@ -80,6 +79,21 @@ body {
     opacity: 0.8;
     right: 0;
     // transform: translateY(0);
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOutAnime; /*アニメーションの定義名*/
+  animation-duration: 1s; /*アニメーション変化時間 ※デフォルト*/
+  animation-fill-mode: forwards; /*アニメーションの開始と終了時の状態を指定*/
+  opacity: 0;
+}
+@keyframes fadeOutAnime {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
   }
 }
 
