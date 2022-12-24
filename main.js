@@ -1,9 +1,12 @@
-const button = document.getElementById("menu_image");
-const menu_imageOPEN = document.getElementById("menu_image-open");
-const menu_imageCLOSE = document.getElementById("menu_image-close");
-const menu = document.getElementById("menu");
+// const buttonMenuImage = document.getElementById("menu_image");
+// const menu_imageOPEN = document.getElementById("menu_image-open");
+// const menu_imageCLOSE = document.getElementById("menu_image-close");
+const menu_text = document.getElementById("menu_text");
+const hamburger = document.getElementById("hamburger");
+const hamburgerBar = hamburger.children;
+console.log(hamburgerBar);
 
-const menu_image_change = (el) => {
+const menuImageChange = (el) => {
   if (el.style.display == "") {
     el.style.display = "none";
   } else {
@@ -11,30 +14,38 @@ const menu_image_change = (el) => {
   }
 };
 
-const menu_text_in = (el) => {
-  if (el.classList.contains("menu_text")) {
-    el.classList.remove("menu_text", "fadeIn");
-    el.style.display = "none";
+const menuTextIn = (el) => {
+  if (el.classList.contains("is_active")) {
+    el.classList.remove("is_active");
+    // el.classList.remove("is_active", "fadeIn");
+    // el.style.display = "none";
+    for (var i = 0, len = hamburgerBar.length; i < len; i++) {
+      hamburgerBar[i].classList.remove("is_active");
+    }
   } else {
-    el.classList.add("menu_text", "fadeIn");
-    el.style.display = "";
+    el.classList.add("is_active");
+    // el.classList.add("is_active", "fadeIn");
+    // el.style.display = "";
+    for (var i = 0, len = hamburgerBar.length; i < len; i++) {
+      hamburgerBar[i].classList.add("is_active");
+    }
   }
 };
 
-const menu_text_out = (el) => {
-  if (el.style.display("")) {
-    el.classList.add("fadeOut");
-  } else {
-    el.classList.remove("fadeOut");
-  }
-};
+// buttonMenuImage.addEventListener(
+//   "click",
+//   () => {
+//     menuTextIn(menu_text);
+//     menuImageChange(menu_imageOPEN);
+//     menuImageChange(menu_imageCLOSE);
+//   },
+//   false
+// );
 
-button.addEventListener(
+hamburger.addEventListener(
   "click",
   () => {
-    menu_text_in(menu);
-    menu_image_change(menu_imageOPEN);
-    menu_image_change(menu_imageCLOSE);
+    menuTextIn(menu_text);
   },
   false
 );
